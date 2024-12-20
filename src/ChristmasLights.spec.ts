@@ -35,4 +35,12 @@ describe("ChristmasLights", () => {
 
     expect(christmasLights.amountLit()).toBe(1000)
   })
+
+  it("turns on all the lights in a row from custom origin", () => {
+    const christmasLights = ChristmasLights.create()
+
+    christmasLights.turnOn(new Coordinates(1, 0), new Coordinates(999, 0))
+
+    expect(christmasLights.amountLit()).toBe(999)
+  })
 })
