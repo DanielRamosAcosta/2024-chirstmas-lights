@@ -1,9 +1,7 @@
 import { Coordinates } from "./Coordinates.js"
 
 export class ChristmasLights {
-  private row: boolean[] = []
-  private row2: boolean[] = []
-  private row3: boolean[] = []
+  private grid: boolean[][] = [new Array(), new Array(), new Array()]
 
   static create() {
     return new ChristmasLights()
@@ -16,15 +14,15 @@ export class ChristmasLights {
   }
 
   turnOn(start: Coordinates, end: Coordinates) {
-    this.turnOnRow(this.row, start.x, end.x)
+    this.turnOnRow(this.grid[0], start.x, end.x)
 
     if (end.y === 1) {
-      this.turnOnRow(this.row2, start.x, end.x)
+      this.turnOnRow(this.grid[1], start.x, end.x)
     }
 
     if (end.y === 2) {
-      this.turnOnRow(this.row2, start.x, end.x)
-      this.turnOnRow(this.row3, start.x, end.x)
+      this.turnOnRow(this.grid[1], start.x, end.x)
+      this.turnOnRow(this.grid[2], start.x, end.x)
     }
   }
 
@@ -38,9 +36,9 @@ export class ChristmasLights {
   }
 
   amountLit() {
-    let row1Amount = this.countLitLights(this.row)
-    let row2Amount = this.countLitLights(this.row2)
-    let row3Amount = this.countLitLights(this.row3)
+    let row1Amount = this.countLitLights(this.grid[0])
+    let row2Amount = this.countLitLights(this.grid[1])
+    let row3Amount = this.countLitLights(this.grid[2])
 
     return row1Amount + row2Amount + row3Amount
   }

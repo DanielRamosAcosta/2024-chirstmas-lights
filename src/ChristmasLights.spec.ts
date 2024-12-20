@@ -52,7 +52,7 @@ describe("ChristmasLights", () => {
     expect(christmasLights.amountLit()).toBe(2)
   })
 
-  it("turns on all lights in the same column", () => {
+  it("turns on three lights in the same column", () => {
     const christmasLights = ChristmasLights.create()
 
     christmasLights.turnOn(new Coordinates(0, 0), new Coordinates(0, 2))
