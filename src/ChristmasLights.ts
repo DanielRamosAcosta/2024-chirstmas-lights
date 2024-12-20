@@ -3,9 +3,10 @@ import { Coordinates } from "./Coordinates.js"
 export class ChristmasLights {
   private isOn = false
 
-  turnOn(arg0: Coordinates, arg1: Coordinates) {
+  turnOn(start: Coordinates, end: Coordinates) {
     this.isOn = true
   }
+
   static create() {
     return new ChristmasLights()
   }
