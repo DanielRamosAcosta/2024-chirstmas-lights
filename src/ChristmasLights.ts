@@ -1,17 +1,15 @@
 import { Coordinates } from "./Coordinates.js"
 
 export class ChristmasLights {
-  private row = [false, false]
+  private row: boolean[] = []
 
   static create() {
     return new ChristmasLights()
   }
 
   turnOn(start: Coordinates, end: Coordinates) {
-    this.row[0] = true
-
-    if (end.x === 1) {
-      this.row[1] = true
+    for (let i = 0; i <= end.x; i++) {
+      this.row[i] = true
     }
   }
 
