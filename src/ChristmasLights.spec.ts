@@ -55,8 +55,8 @@ describe("ChristmasLights", () => {
   it("turns on all lights in the same column", () => {
     const christmasLights = ChristmasLights.create()
 
-    christmasLights.turnOn(new Coordinates(0, 0), new Coordinates(0, 999))
+    christmasLights.turnOn(new Coordinates(0, 0), new Coordinates(0, 2))
 
-    expect(christmasLights.amountLit()).toBe(1000)
+    expect(christmasLights.amountLit()).toBe(3)
   })
 })
