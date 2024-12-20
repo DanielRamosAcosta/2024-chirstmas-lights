@@ -20,20 +20,19 @@ export class ChristmasLights {
     }
   }
 
-  amountLit() {
-    let row1Amount = this.row.reduce((acc, current) => {
+  countLitLights(row: boolean[]) {
+    return row.reduce((acc, current) => {
       if (current) {
         return acc + 1
       }
       return acc
     }, 0);
+  }
 
-    let row2Amount = this.row2.reduce((acc, current) => {
-      if (current) {
-        return acc + 1
-      }
-      return acc
-    }, 0);
+  amountLit() {
+    let row1Amount = this.countLitLights(this.row)
+    let row2Amount = this.countLitLights(this.row2)
+
     return row1Amount + row2Amount
   }
 }
