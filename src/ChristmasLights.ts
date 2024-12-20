@@ -8,7 +8,7 @@ export class ChristmasLights {
     return new ChristmasLights()
   }
 
-  turnOnRow(row: boolean[], a: number, b: number) {
+  private turnOnRow(row: boolean[], a: number, b: number) {
     for (let i = a; i <= b; i++) {
       row[i] = true
     }
@@ -22,7 +22,7 @@ export class ChristmasLights {
     }
   }
 
-  countLitLights(row: boolean[]) {
+  private countLitLights(row: boolean[]) {
     return row.reduce((acc, current) => {
       if (current) {
         return acc + 1
