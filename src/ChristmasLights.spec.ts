@@ -43,4 +43,12 @@ describe("ChristmasLights", () => {
 
     expect(christmasLights.amountLit()).toBe(999)
   })
+
+  it("turns on two lights in the same column", () => {
+    const christmasLights = ChristmasLights.create()
+
+    christmasLights.turnOn(new Coordinates(0, 0), new Coordinates(0, 1))
+
+    expect(christmasLights.amountLit()).toBe(2)
+  })
 })
