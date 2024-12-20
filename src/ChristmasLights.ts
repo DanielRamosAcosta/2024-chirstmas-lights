@@ -10,7 +10,7 @@ export class ChristmasLights {
   turnOn(start: Coordinates, end: Coordinates) {
     this.row[0] = true
 
-    if (end.y === 1) {
+    if (end.x === 1) {
       this.row[1] = true
     }
   }

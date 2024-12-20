@@ -23,8 +23,16 @@ describe("ChristmasLights", () => {
   it("turns on two lights in the same row", () => {
     const christmasLights = ChristmasLights.create()
 
-    christmasLights.turnOn(new Coordinates(0, 0), new Coordinates(0, 1))
+    christmasLights.turnOn(new Coordinates(0, 0), new Coordinates(1, 0))
 
     expect(christmasLights.amountLit()).toBe(2)
+  })
+
+  it("turns on all the lights in a row", () => {
+    const christmasLights = ChristmasLights.create()
+
+    christmasLights.turnOn(new Coordinates(0, 0), new Coordinates(999, 0))
+
+    expect(christmasLights.amountLit()).toBe(1000)
   })
 })
