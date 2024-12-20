@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
+
 import { ChristmasLights } from "./ChristmasLights.js";
+import { Coordinates } from "./Coordinates.js";
 
 describe("ChristmasLights", () => {
   it("all lights are off when created", () => {
