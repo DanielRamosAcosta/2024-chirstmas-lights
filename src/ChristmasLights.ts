@@ -8,15 +8,17 @@ export class ChristmasLights {
     return new ChristmasLights()
   }
 
-  turnOn(start: Coordinates, end: Coordinates) {
-    for (let i = start.x; i <= end.x; i++) {
-      this.row[i] = true
+  turnOnRow(row: boolean[], a: number, b: number) {
+    for (let i = a; i <= b; i++) {
+      row[i] = true
     }
+  }
+
+  turnOn(start: Coordinates, end: Coordinates) {
+    this.turnOnRow(this.row, start.x, end.x)
 
     if (end.y === 1) {
-      for (let i = start.x; i <= end.x; i++) {
-        this.row2[i] = true
-      }
+      this.turnOnRow(this.row2, start.x, end.x)
     }
   }
 
