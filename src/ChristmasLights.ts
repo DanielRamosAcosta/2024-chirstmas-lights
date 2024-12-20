@@ -8,7 +8,7 @@ export class ChristmasLights {
   }
 
   turnOn(start: Coordinates, end: Coordinates) {
-    for (let i = 0; i <= end.x; i++) {
+    for (let i = start.x; i <= end.x; i++) {
       this.row[i] = true
     }
   }
