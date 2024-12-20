@@ -1,7 +1,7 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vitest"
 
-import { ChristmasLights } from "./ChristmasLights.js";
-import { Coordinates } from "./Coordinates.js";
+import { ChristmasLights } from "./ChristmasLights.js"
+import { Coordinates } from "./Coordinates.js"
 
 describe("ChristmasLights", () => {
   it("all lights are off when created", () => {
@@ -18,5 +18,13 @@ describe("ChristmasLights", () => {
     christmasLights.turnOn(new Coordinates(0, 0), new Coordinates(0, 0))
 
     expect(christmasLights.amountLit()).toBe(1)
+  })
+
+  it("turns on two lights in the same row", () => {
+    const christmasLights = ChristmasLights.create()
+
+    christmasLights.turnOn(new Coordinates(0, 0), new Coordinates(0, 1))
+
+    expect(christmasLights.amountLit()).toBe(2)
   })
 })
