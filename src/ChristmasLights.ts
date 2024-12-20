@@ -14,15 +14,8 @@ export class ChristmasLights {
   }
 
   turnOn(start: Coordinates, end: Coordinates) {
-    this.turnOnRow(this.grid[0], start.x, end.x)
-
-    if (end.y === 1) {
-      this.turnOnRow(this.grid[1], start.x, end.x)
-    }
-
-    if (end.y === 2) {
-      this.turnOnRow(this.grid[1], start.x, end.x)
-      this.turnOnRow(this.grid[2], start.x, end.x)
+    for (let i = 0; i <= end.y; i++) {
+      this.turnOnRow(this.grid[i], start.x, end.x)
     }
   }
 
@@ -36,10 +29,11 @@ export class ChristmasLights {
   }
 
   amountLit() {
-    let row1Amount = this.countLitLights(this.grid[0])
-    let row2Amount = this.countLitLights(this.grid[1])
-    let row3Amount = this.countLitLights(this.grid[2])
+    let totalAmount = 0
+    for (let i = 0; i < this.grid.length; i++) {
+      totalAmount += this.countLitLights(this.grid[i])
+    }
 
-    return row1Amount + row2Amount + row3Amount
+    return totalAmount
   }
 }
